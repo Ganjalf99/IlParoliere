@@ -22,6 +22,11 @@ public class CalculatorGUI extends JFrame   {
     static public void aggiornaTesto(String txt ){
         l.setText(l.getText()+ txt);
     }
+
+    static public void Prova2(String txt ){
+            System.out.println("ciao");
+
+    }
     public static void main(String[] args) {
 
          Calculator  calculator = new Calculator();
