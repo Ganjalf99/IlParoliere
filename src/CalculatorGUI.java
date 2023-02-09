@@ -1,7 +1,10 @@
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
-public class CalculatorGUI extends JFrame implements ActionListener  {
+
+import static java.lang.Integer.valueOf;
+
+public class CalculatorGUI extends JFrame   {
         // create a frame
         static JFrame f;
 
@@ -16,7 +19,12 @@ public class CalculatorGUI extends JFrame implements ActionListener  {
         {
             s0 = s1 = s2 = "";
         }
+    static public void aggiornaTesto(String txt ){
+        l.setText(l.getText()+ txt);
+    }
     public static void main(String[] args) {
+
+         Calculator  calculator = new Calculator();
         // view
         // create a frame
         f = new JFrame("calculator");
@@ -30,7 +38,7 @@ public class CalculatorGUI extends JFrame implements ActionListener  {
         }
 
         // create a object of class
-        CalculatorGUI c = new CalculatorGUI();
+
 
         // create a textfield
         l = new JTextField(16);
@@ -78,22 +86,98 @@ public class CalculatorGUI extends JFrame implements ActionListener  {
 
             }
         });
-        bd.addActionListener(c);
-        bs.addActionListener(c);
-        ba.addActionListener(c);
-        b9.addActionListener(c);
-        b8.addActionListener(c);
-        b7.addActionListener(c);
-        b6.addActionListener(c);
-        b5.addActionListener(c);
-        b4.addActionListener(c);
-        b3.addActionListener(c);
-        b2.addActionListener(c);
-        b1.addActionListener(c);
-        b0.addActionListener(c);
-        be.addActionListener(c);
-        beq.addActionListener(c);
-        beq1.addActionListener(c);
+        bd.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+
+            }
+        });
+        bs.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+
+            }
+        });
+        ba.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                calculator.setOperatore(ba.getText());
+                aggiornaTesto(ba.getText());
+            }
+        });
+
+        b9.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                calculator.setN( valueOf(b9.getText()));
+                aggiornaTesto(b9.getText());
+            }
+        });
+        b8.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                calculator.setN( valueOf(b8.getText()));
+                aggiornaTesto(b8.getText());
+            }
+        });
+        b7.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                calculator.setN( valueOf(b8.getText()));
+                aggiornaTesto(b7.getText());            }
+        });
+        b6.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                calculator.setN( valueOf(b6.getText()));
+                aggiornaTesto(b6.getText());
+            }
+        });
+        b5.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                calculator.setN( valueOf(b5.getText()));
+                aggiornaTesto(b5.getText());
+            }
+        });
+        b4.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                calculator.setN( valueOf(b4.getText()));
+                aggiornaTesto(b4.getText());
+            }
+        });
+        b3.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                calculator.setN( valueOf(b3.getText()));
+                aggiornaTesto(b3.getText());
+            }
+        });
+        b2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                calculator.setN( valueOf(b2.getText()));
+                aggiornaTesto(b2.getText());
+            }
+        });
+        b1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                calculator.setN( valueOf(b1.getText()));
+                aggiornaTesto(b1.getText());
+            }
+        });
+        b0.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                calculator.setN( valueOf(b0.getText()));
+                aggiornaTesto(b0.getText());
+            }
+        });
+        be.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+
+            }
+        });
+        beq.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+
+            }
+        });
+        beq1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                l.setText("");
+                aggiornaTesto(calculator.uguale().toString());
+            }
+        });
 
 
         // add elements to panel
@@ -126,8 +210,6 @@ public class CalculatorGUI extends JFrame implements ActionListener  {
         f.show();
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
-    }
+
 }
