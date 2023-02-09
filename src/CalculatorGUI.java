@@ -23,6 +23,10 @@ public class CalculatorGUI extends JFrame   {
         l.setText(l.getText()+ txt);
     }
 
+    static public void Prova1(){
+            System.out.println("Helloooooo");
+    }
+
     static public void Prova2(String txt ){
             System.out.println("ciao");
 
